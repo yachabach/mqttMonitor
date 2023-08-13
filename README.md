@@ -1,6 +1,12 @@
 # mqttMonitor
 
-This template should help get you started developing with Vue 3 in Vite.
+## MQTT Test Server
+
+A test server lives at <https://test.mosquitto.org/>.  It offers opportunities to test secure and unsecure mqtt connections.
+
+## defaultTopics
+
+Pulse/leafs/00:00:a3:bf:ed:12:ttyAMA0
 
 ## Recommended IDE Setup
 

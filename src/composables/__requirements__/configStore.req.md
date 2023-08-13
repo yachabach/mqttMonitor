@@ -6,6 +6,9 @@
 
 1. Provides the following objects and functions
 {name: topicList, type: object}
+{name: topicList, type: object}
+{name: topicList, type: object}
+{name: topicList, type: object}
 
 ### Topic List Provisioning
 
