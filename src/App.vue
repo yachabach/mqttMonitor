@@ -1,9 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { testMQTT } from '@/composables/mqttManager.js'
-
-testMQTT()
 
 </script>
 
