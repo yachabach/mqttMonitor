@@ -1,7 +1,6 @@
-import * as fs from 'fs'
 import { computed, ref } from 'vue'
 
-export const createConfigStore = configFile => {
+export const createConfigStore = () => {
 
     const topics = ref([])
 
