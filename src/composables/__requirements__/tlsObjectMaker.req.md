@@ -2,7 +2,7 @@
 
 To work in a browser, MQTT must operate over websockets.  This application requires a secure websocket (wss).  This means the connection must include TLS security files.
 
-To read files in a browser environment, the user has to allow the browser to access the file system.  It would be cumbersome for users to specify security files every time they start the app.  So we will store security file handles and contents to IndexDB in the browser.  Then, when the app starts and we want to connect to MQTT Broker over websockets we will:
+To read files in a browser environment, the user has to allow the browser to access the file system.  It would be cumbersome for users to specify security files every time they start the app.  So we will store security file handles IndexDB in the browser.  Then, when the app starts and we want to connect to MQTT Broker over websockets we will:
 
 1. load the stored certificates and verify connection success
 2. ask permission to access the stored filenames on connect faliure
@@ -16,8 +16,13 @@ This module provides the helper functions.  We define them in their own module t
 Provides the following:
 
 1. {name: createTLSObject, type: object}
-2. {name: getKeyFromDb, type: function}
-3. {name: getFileHandleFromDb, type: function}
-4. {name: getKeyFromFilename, type: function}
-5. {name: getFileHandleFromUser, type: function}
-6. {name: setKeyToDb, type: function}
+2. {name: getFileHandleFromDb, type: function}
+3. {name: getKeyFromHandle, type: function}
+4. {name: getKeyFileHandleFromUser, type: function}
+5. {name: setHandleToDb, type: function}
+
+### getKeyFileHandleFromUser
+
+Not tested.  Returns a file handle from the file picker.  Picker is set to look for specific files.
+
+

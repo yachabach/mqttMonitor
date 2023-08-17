@@ -1,6 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { getKeyFileHandleFromUser, getFileHandleFromDb } from '@/composables/tlsObjectMaker.js'
+
+
+const handleClick = async () => {
+  const handle = await getKeyFileHandleFromUser('cert')
+  console.log('handle: ', handle)
+  const dbHandle = getFileHandleFromDb('cert')
+  console.log('dbHandle: ', dbHandle)
+  console.log('Slected file name: ', dbHandle ? dbHandle.name : 'None Selected') 
+}
+
 
 </script>
 
@@ -10,6 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <button @click="handleClick">Choose File</button>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

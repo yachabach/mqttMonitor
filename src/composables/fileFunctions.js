@@ -1,4 +1,4 @@
-const defaultOpts = {
+export const filePickerObject = {
     types: [{
         id: 'openText',
         description: "Text or JSON files",
@@ -11,15 +11,39 @@ const defaultOpts = {
     ],
     excludeAcceptAllOption: true,
     multiple: false,
-};    
+};  
 
-export const getFileHandleWithPicker = async (options = defaultOpts) => {
-    // Open file picker and destructure the result to the first handle
-    const [fileHandle] = await window.showOpenFilePicker(options);
-    return fileHandle
+const pickerFileTypes = {
+    pem: {
+        id: 'certs',
+        description: "Certificate and CA Files",
+        accept: {"pem/*": [".pem"]}
+    },
+    key: {
+        id: 'keys',
+        description: "Public Key File",
+        accept: {"key/*": [".key"]}
+    }
 }
 
-export const getNewFileHandle = async (options = defaultOpts) => {
+export const getPickerFor = fileType => {
+    const newPicker = JSON.parse(JSON.stringify(filePickerObject))
+    newPicker.types[0] = pickerFileTypes[fileType]
+    return newPicker
+} 
+
+export const getFileHandleWithPicker = async (options = filePickerObject) => {
+    try {
+        // Open file picker and destructure the result to the first handle
+        const [fileHandle] = await window.showOpenFilePicker(options);
+        return fileHandle        
+    } catch (err) {
+        console.log('Trapped picker error: ', err)
+        return undefined
+    }
+}
+
+export const getNewFileHandle = async (options = filePickerObject) => {
     return await window.showSaveFilePicker(options);
 }
 
