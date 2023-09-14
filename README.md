@@ -1,8 +1,19 @@
 # mqttMonitor
 
-## MQTT Test Server
+## MQTT 
+
+### Test Server
 
 A test server lives at <https://test.mosquitto.org/>.  It offers opportunities to test secure and unsecure mqtt connections.
+
+### MQTT Resources
+
+- <https://www.hivemq.com/article/ultimate-guide-on-how-to-use-mqtt-with-node-js/>
+- <https://github.com/kaandesu/vue-paho-mqtt>
+- <http://www.steves-internet-guide.com/mqtt-websockets/>
+- <http://www.steves-internet-guide.com/using-javascript-mqtt-client-websockets/>
+<https://github.com/aws/aws-iot-device-sdk-js#browser>
+<https://github.com/aws/aws-iot-device-sdk-js#temperature-monitor-browser-example>
 
 ## defaultTopics
 
